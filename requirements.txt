@@ -3,3 +3,4 @@ uvicorn
 jinja2
 pymysql
 python-multipart
+pymysql-pooling
