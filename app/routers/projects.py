@@ -8,6 +8,7 @@ class CreateProject(BaseModel):
     name: str
     description: str = ""
     owner_id: int
+    deadline: str = None
 
 
 class UpdateProject(BaseModel):
@@ -43,9 +44,9 @@ def post_projects(project: CreateProject):
     try:
         cur = conn.cursor()
         cur.execute(
-            "INSERT INTO projects (name, description, owner_id) "
-            "VALUES (%s, %s, %s)",
-            (project.name, project.description, project.owner_id)
+            "INSERT INTO projects (name, description, owner_id, deadline) "
+            "VALUES (%s, %s, %s, %s)",
+            (project.name, project.description, project.owner_id, project.deadline)
         )
         conn.commit()
     except Exception as e:
