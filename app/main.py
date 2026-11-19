@@ -2,7 +2,6 @@ from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from app.index import index
-from app.db import get_pool_conn
 from app.routers import users
 from app.routers import tasks
 from app.routers import projects

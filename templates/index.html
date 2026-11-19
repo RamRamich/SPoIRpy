@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-    <link rel="stylesheet" href="/static/style.css">
     <meta charset="UTF-8">
     <title>Приветствие</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
         <h1>Привет, {{ name }}!</h1>
         <p>Сегодня {{ date }}.</p>
 
+        <h2>Пользователи (из БД)</h2>
+        <ul id="users-list">
+            <li>Загрузка...</li>
+        </ul>
     </div>
+
+    <script src="/static/script.js"></script>
 </body>
 </html>

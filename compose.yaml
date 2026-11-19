@@ -2,7 +2,9 @@ services:
   web:
     build: .
     ports:
-      - "8000:8000"      # ← добавить
+      - "8000:8000"
+    environment:
+      DATABASE_URL: mysql+pymysql://user:password@db:3306/appDB
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/"]
       interval: 5s
